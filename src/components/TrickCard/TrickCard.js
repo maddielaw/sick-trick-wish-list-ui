@@ -5,8 +5,8 @@ const TrickCard = ({ stance, name, obstacle, tutorial}) => {
 
   const formatUppercase = (word) => {
     return word.charAt(0).toUpperCase() + word.slice(1)
-
   }
+  
   return (
     <div className="trick-card">
       <p>{formatUppercase(stance)} {formatUppercase(name)}</p>
