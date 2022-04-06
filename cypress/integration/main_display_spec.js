@@ -9,6 +9,14 @@ describe('Main display', () => {
         .contains('Regular Treflip')
   });
 
+  it('should be able to fill out multiple inputs', () => {
+    cy.visit('http://localhost:3000/')
+      .get('.stance-input').select('Regular').contains('Regular')
+      .get('.trick-name-input').type('My sweet new move').should('have.value', 'My sweet new move')
+      .get('.obstacle-input').select('Rails').contains('Rails')
+      .get('.tutorial-link-input').type('www.example.com').should('have.value', 'www.example.com')
+});
+
 
 
 
