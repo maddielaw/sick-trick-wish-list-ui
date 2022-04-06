@@ -69,7 +69,7 @@ class Form extends Component {
           onChange={(e) => this.handleChange(e)}
           required
           />
-        <button type='submit'>Send It!</button>
+        <button type='submit' className='submit-btn'>Send It!</button>
       </form>
     )
   }
