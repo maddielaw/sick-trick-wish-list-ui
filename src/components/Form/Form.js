@@ -16,10 +16,29 @@ class Form extends Component {
     this.setState({[e.target.name]: e.target.value})
   }
 
+  clearInputs = () => {
+    this.setState({
+      stance: '',
+      name: '',
+      obstacle: '',
+      tutorial: ''
+    })
+  }
+
+  submitNewTrick = (e) => {
+    e.preventDefault();
+    const newTrick = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addNewTrick(newTrick)
+    this.clearInputs()
+  }
+
   render() {
     return (
-      <form>
-        <select name="stance" value={this.state.stance} onChange={(e) => this.handleChange(e)}>
+      <form onSubmit={(e) => this.submitNewTrick(e)}>
+        <select name="stance" value={this.state.stance} onChange={(e) => this.handleChange(e)} required>
           <option value="" disabled defaultValue>Choose your Stance</option>
           <option value="Regular">Regular</option>
           <option value="Switch">Switch</option>
@@ -33,7 +52,7 @@ class Form extends Component {
           onChange={(e) => this.handleChange(e)}
           required
           />
-        <select name="obstacle" value={this.state.obstacle} onChange={(e) => this.handleChange(e)}>
+        <select name="obstacle" value={this.state.obstacle} onChange={(e) => this.handleChange(e)} required>
           <option value="" disabled defaultValue>Choose your Obstacle</option>
           <option value="Flatground">Flatground</option>
           <option value="Ledge">Ledge</option>
@@ -50,10 +69,7 @@ class Form extends Component {
           onChange={(e) => this.handleChange(e)}
           required
           />
-        
         <button type='submit'>Send It!</button>
-
-
       </form>
     )
   }
