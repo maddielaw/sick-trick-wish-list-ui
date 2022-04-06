@@ -20,7 +20,8 @@ button {
 
 .stance-input:hover,
 .obstacle-input:hover,
-input:hover {
+input:hover,
+button:hover {
   border: 2px solid blue;
 }
 
