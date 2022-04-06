@@ -1,0 +1,30 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  margin-bottom: 30px;
+}
+
+.stance-input,
+.obstacle-input,
+input,
+button {
+  height: 30px;
+  border-radius: 5px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Fredoka One', cursive;
+}
+
+.stance-input:hover,
+.obstacle-input:hover,
+input:hover {
+  border: 2px solid blue;
+}
+
+.stance-input,
+.obstacle-input {
+  height: 35px;
+}
