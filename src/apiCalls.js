@@ -1,7 +1,7 @@
 const fetchTricks = () => {
   return fetch('http://localhost:3001/api/v1/tricks	')
     .then(response => {
-      if (!Response.ok) {
+      if (!response.ok) {
         throw new Error("Something went wrong! Please try again later.")
       } else {
         return response.json()
