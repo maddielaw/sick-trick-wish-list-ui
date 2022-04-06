@@ -1,8 +1,8 @@
-import { Component } from 'react';
+import React from 'react';
 import './TrickContainer.css';
-import '../TrickCard/TrickCard';
+import TrickCard from '../TrickCard/TrickCard'
 
-const TrickContainer = (tricks) => {
+const TrickContainer = ({tricks}) => {
 
   const listTricks = (tricks) => {
     return tricks.map(trick => {
