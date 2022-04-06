@@ -12,7 +12,7 @@ const TrickCard = ({ stance, name, obstacle, tutorial}) => {
       <p>{formatUppercase(stance)} {formatUppercase(name)}</p>
       <p>{`Obstacle: ${formatUppercase(obstacle)}`}</p>
       <p>Link to Tutorial:</p>
-      <p>{tutorial}</p>
+      <a href={tutorial}>{tutorial}</a>
     </div>
   )
 
